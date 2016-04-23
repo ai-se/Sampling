@@ -16,11 +16,11 @@ def hpcc_rf(parameter):
     import subprocess
     DEVNULL = open(os.devnull, "wb")
     output = subprocess.check_output(command, shell=True)
+
+    import xml.etree.ElementTree as ET
+    tree = ET.ElementTree(ET.fromstring(output))
+    accuracy = float(tree.getroot().find("Dataset").find("Row").find("accuracy").text)
     import pdb
     pdb.set_trace()
-    result = output.split("\n")[3]
-    import re
-    res = re.search(r"_1>(.*)</Result_1>", result)
-    return_value = int(res.group(1))
-    return [return_value]
+    return accuracy
 
