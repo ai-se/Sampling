@@ -11,7 +11,7 @@ def hpcc_rf(parameter):
     sleep(1)
     print "# ",
     sys.stdout.flush()
-    command = "ecl run ./Problems/RF/rf.ecl -I\"/home/vnair2/GIT/ecl-ml-master/\" --target=thor"
+    command = "ecl run ./Problems/RF/rf.ecl -I\"/home/vnair2/GIT/ecl-ml\" --target=thor"
 
     import subprocess
     DEVNULL = open(os.devnull, "wb")
