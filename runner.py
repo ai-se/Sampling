@@ -8,7 +8,7 @@ problems = [hpcc_rf]
 algorithms = [grid_search, random_samples, lhs]
 
 # RF Parameters
-rf_parameters =[[100], [7], [1], [50], [True, False]]
+rf_parameters =[[100, 200], [7, 10], [0.5, 1], [50, 150], [True, False]]
 
 
 for algorithm in algorithms:
