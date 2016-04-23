@@ -1,4 +1,6 @@
 import os
+
+
 def modify_file(no_trees, no_features, purity, depth, gini_split):
     from os import system
     system("rm -f ./Problems/RF/rf.ecl")
@@ -11,7 +13,9 @@ def modify_file(no_trees, no_features, purity, depth, gini_split):
     original_file_name = "./Problems/RF/rf_original.ecl"
     content = open(original_file_name, "r").readlines()
 
-    content[26] = "learner := Classify.RandomForest(" + str(no_trees) + "," + str(no_features) + "," + str(purity) + "," + str(depth) + "," + gini_split + ");\n"
+    import pdb
+    pdb.set_trace()
+    content[26] = "learner := Classify.RandomForest(" + str(no_trees) + "," + str(no_features) + "," + str(purity) + "," + str(depth) + "," + str(gini_split) + ");\n"
     f = open(modified_file_name, "w")
     f.write("".join(content))
     f.close()
