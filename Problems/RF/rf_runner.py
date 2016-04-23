@@ -7,9 +7,11 @@ def hpcc_rf(parameter):
     from random import randint
     modify_file(parameter[0], parameter[1], parameter[2], parameter[3], parameter[4])
 
+    from time import sleep
+    sleep(1)
     print "# ",
     sys.stdout.flush()
-    command = "ecl run ./Problems/HPCC/Kmeans/kmeans.ecl -I\"/home/vnair2/GIT/ecl-ml-master/\" --target=thor"
+    command = "ecl run ./Problems/RF/rf.ecl -I\"/home/vnair2/GIT/ecl-ml-master/\" --target=thor"
 
     import subprocess
     DEVNULL = open(os.devnull, "wb")
