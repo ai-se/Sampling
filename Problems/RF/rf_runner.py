@@ -20,7 +20,5 @@ def hpcc_rf(parameter):
     import xml.etree.ElementTree as ET
     tree = ET.ElementTree(ET.fromstring(output))
     accuracy = float(tree.getroot().find("Dataset").find("Row").find("accuracy").text)
-    import pdb
-    pdb.set_trace()
     return accuracy
 
