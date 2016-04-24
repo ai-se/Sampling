@@ -5,7 +5,7 @@ from Algorithms.LHS import lhs
 
 
 problems = [hpcc_rf]
-algorithms = [random_samples, lhs]
+algorithms = [random_samples]
 
 # RF Parameters
 rf_parameters =[[100, 200], [7, 10], [0.5, 1], [50, 150], [True, False]]

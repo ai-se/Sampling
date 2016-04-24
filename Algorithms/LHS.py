@@ -41,7 +41,7 @@ def lhs(paramters, problem):
     t_parameter_combinations.sort()
     t_parameter_combinations = list(k for k,_ in itertools.groupby(t_parameter_combinations))
 
-    for i in [ False]:
+    for i in [True]:
         for tp in t_parameter_combinations:
             parameter_combinations.append(tp + [i])
     print "Number of Combinations: ", len(parameter_combinations)
