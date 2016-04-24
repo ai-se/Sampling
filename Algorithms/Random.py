@@ -10,11 +10,12 @@ def random_samples(paramters, problem):
         parameter_combinations.append([randint(min_max[0][0], min_max[0][-1]), randint(min_max[1][0], min_max[1][-1]),
                                        round(uniform(min_max[2][0], min_max[2][-1]), 3), randint(min_max[3][0], min_max[3][-1]),
                                        choice(paramters[-1])])
-
+    print "Number of test cases: ", len(parameter_combinations)
     for parameter_combination in parameter_combinations:
         result = problem(parameter_combination)
-        result_line = ",".join(map(str, parameter_combination)) + "|" + str(result)
+        result_line = ",".join(map(str, parameter_combination)) + "|" + str(result) + "\n"
         fd.write(result_line)
+	fd.flush()
     fd.close()
 
 if __name__ == "__main__":

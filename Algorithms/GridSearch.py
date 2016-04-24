@@ -7,6 +7,7 @@ def grid_search(paramters, problem):
         result = problem(parameter_combination)
         result_line = ",".join(map(str, parameter_combination)) + "|" + str(result)
         fd.write(result_line)
+	fd.flush()
     fd.close()
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ def smaller_lhs(no_of_parameters, divs):
 
 def lhs(paramters, problem):
     from random import randint, uniform, choice
-    result_filename = "./Result/lhs_" + problem.__name__
+    result_filename = "./Result/true_lhs_" + problem.__name__
     fd = open(result_filename, "w")
 
     number_of_divison = 4
@@ -41,15 +41,15 @@ def lhs(paramters, problem):
     t_parameter_combinations.sort()
     t_parameter_combinations = list(k for k,_ in itertools.groupby(t_parameter_combinations))
 
-    for i in [True, False]:
+    for i in [ False]:
         for tp in t_parameter_combinations:
             parameter_combinations.append(tp + [i])
-            print parameter_combinations[-1]
-
+    print "Number of Combinations: ", len(parameter_combinations)
     for parameter_combination in parameter_combinations:
         result = problem(parameter_combination)
-        result_line = ",".join(map(str, parameter_combination)) + "|" + str(result)
+        result_line = ",".join(map(str, parameter_combination)) + "|" + str(result) + "\n"
         fd.write(result_line)
+	fd.flush()
     fd.close()
 
 if __name__ == "__main__":
