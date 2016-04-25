@@ -3,9 +3,10 @@ def grid_search(paramters, problem):
     fd = open(result_filename, "w")
     import itertools
     parameter_combinations = list(itertools.product(*paramters))
+    print "Number of Parameters: ", len(parameter_combinations)
     for parameter_combination in parameter_combinations:
         result = problem(parameter_combination)
-        result_line = ",".join(map(str, parameter_combination)) + "|" + str(result)
+        result_line = ",".join(map(str, parameter_combination)) + "|" + str(result) + "\n"
         fd.write(result_line)
 	fd.flush()
     fd.close()

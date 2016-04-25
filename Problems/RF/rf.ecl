@@ -24,7 +24,7 @@ tuneIndepData := ML.Discretize.ByRounding(tune_pr_indep);
 ToField(tune_dep_data, tune_pr_dep);
 tuneDepData := ML.Discretize.ByRounding(tune_pr_dep);
 
-learner := Classify.RandomForest(182,9,0.737,134,True);
+learner := Classify.RandomForest(175,10,0.75,100,False);
 result := learner.LearnD(trainIndepData, trainDepData); // model to use when classifying
 model:= learner.model(result);  // transforming model to a easier way to read it
 
